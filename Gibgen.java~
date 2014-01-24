@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
+import java.util.Date;
 
 /**
  *  Title:   Gibberish Generator (GE SWEAP) 
@@ -79,6 +80,8 @@ public class Gibgen{
   public static void main (String args[]) {
     FileReader fb= null;
     
+    long StartTime = new Date().getTime();                               //Start Date timer................
+    
     try {
       fb = new FileReader(args[0]);                         //fb = new FileReader of file name from STNDIN
     } catch (FileNotFoundException e) { 
@@ -93,6 +96,12 @@ public class Gibgen{
     } catch (Exception e) {
       System.out.println(e);
     }
+    
+    long EndTime = new Date().getTime();                  //.............End Date timer
+    long difference = EndTime - StartTime; 
+    System.out.println("Elapsed milliseconds: " + difference);        //Report Date timer difference
+    
+    
   }
   
 }

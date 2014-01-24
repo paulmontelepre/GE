@@ -18,9 +18,14 @@ import java.util.Date;
 public class Gibgen{
   
   private Scanner in;                                    
+  private static int scramletters = 0;
+
   
   public Gibgen(FileReader fb){
-    in= new Scanner(fb);                                  // in = new Scanner
+    in= new Scanner(fb);       // in = new Scanner
+
+
+    
   }
   
 /**
@@ -60,6 +65,8 @@ public class Gibgen{
             token.replace(i,i+1,Character.toString(temp));   
             i++;
             j--;
+            scramletters = scramletters + 1;
+
           }else {
             i++;
             j--;
@@ -100,7 +107,8 @@ public class Gibgen{
     long EndTime = new Date().getTime();                  //.............End Date timer
     long difference = EndTime - StartTime; 
     System.out.println("Elapsed milliseconds: " + difference);        //Report Date timer difference
-    
+    System.out.println("Number of characters scrambled: " + scramletters);
+
     
   }
   
