@@ -106,9 +106,11 @@ public class Gibgen{
     
     long EndTime = new Date().getTime();                  //.............End Date timer
     long difference = EndTime - StartTime; 
+    System.out.println("");
+    System.out.println("");
     System.out.println("Elapsed milliseconds: " + difference);        //Report Date timer difference
     System.out.println("Number of characters scrambled: " + scramletters);
-
+    System.out.println("Characters scrambled per millisecond: " + (scramletters/difference));
     
   }
   
