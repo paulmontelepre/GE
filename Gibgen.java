@@ -19,7 +19,7 @@ public class Gibgen{
   
   private Scanner in;                                    
   private static int scramletters = 0;
-
+  private static int wordcount = 0;
   
   public Gibgen(FileReader fb){
     in= new Scanner(fb);       // in = new Scanner
@@ -74,6 +74,8 @@ public class Gibgen{
         }
       }
       System.out.print(token + " ");                      //print to console token + space
+    
+    wordcount = wordcount + 1;
     }
   }
  
@@ -111,6 +113,7 @@ public class Gibgen{
     System.out.println("Elapsed milliseconds: " + difference);        //Report Date timer difference
     System.out.println("Number of characters scrambled: " + scramletters);
     System.out.println("Characters scrambled per millisecond: " + (scramletters/difference));
+    System.out.println("Wordcount: " + wordcount);
     
   }
   
